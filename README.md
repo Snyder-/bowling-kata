@@ -7,7 +7,7 @@
 
 game = BowlingGame.new
 
-bowling_string = [10, 10, 5] + ([0] * 14)
+bowling_string = [10, 10, 5] + ([0] * 15)
 
 game.rolls(bowling_string).score  # => 45
 
@@ -16,7 +16,7 @@ game.rolls(bowling_string).score  # => 45
 #### With all spares.
 ``` ruby
 
-bowling_string = [8, 2, 5, 4, 9, 0, 10, 0, 10, 0, 5, 5, 5, 3, 6, 3, 9, 1, 9, 1, 10]
-game.rolls(bowling_string).score # => 149
+bowling_string = [10,7,3,9,0,10,0,8,8,2,0,6,10,10,10,8,1]
+game.rolls(bowling_string).score # => 167
 
 ```

@@ -54,4 +54,13 @@ describe BowlingGame do
       expect(score).to eq(60)
     end
   end
+
+  context 'with a full game' do
+    let(:full_game) { [10, 7, 3, 9, 0, 10, 0, 8, 8, 2, 0, 6, 10, 10, 10, 8, 1] }
+    it 'should have a score of 167' do
+      score = game.rolls(full_game).score
+
+      expect(score).to eq(167)
+    end
+  end
 end
