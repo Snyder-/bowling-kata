@@ -25,6 +25,8 @@ class BowlingGame
     @score
   end
 
+  private
+
   def standard_frame_score
     @score += standard_score
     @first_in_frame += 2
@@ -39,8 +41,6 @@ class BowlingGame
     @score += 10 + spare_bonus
     @first_in_frame += 2
   end
-
-  private
 
   def reset_frames_and_score
     @first_in_frame = 0
