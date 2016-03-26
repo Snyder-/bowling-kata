@@ -1,6 +1,9 @@
 #
 class BowlingGame
   attr_reader :first_in_frame, :rolls
+  def initialize
+    @first_in_frame = 0
+  end
 
   def rolls(string_scores)
     @rolls = string_scores
@@ -10,16 +13,14 @@ class BowlingGame
   def score
     frame = 0
     score = 0
-    @first_in_frame = 0
-
     while frame < 10
-      if strike?
-        score += 10 + strike_bonus
-        @first_in_frame += 1
-      elsif spare?
+      if spare?
         score += 10 + spare_bonus
         @first_in_frame += 2
-      elsif standard_frame?
+      elsif strike?
+        score += 10 + strike_bonus
+        @first_in_frame += 1
+      else
         score += standard_score
         @first_in_frame += 2
       end
@@ -48,9 +49,5 @@ class BowlingGame
 
   def standard_score
     @rolls[first_in_frame] + @rolls[first_in_frame + 1]
-  end
-
-  def standard_frame?
-    @rolls[first_in_frame] + @rolls[first_in_frame + 1] < 10
   end
 end

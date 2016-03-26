@@ -47,7 +47,7 @@ describe BowlingGame do
   end
 
   context 'with a few strikes' do
-    let(:strikes) { [10, 10, 10] + [0] * 14 }
+    let(:strikes) { [10, 10, 10] + [0] * 15 }
     it 'has a score of 60' do
       score = game.rolls(strikes).score
 
